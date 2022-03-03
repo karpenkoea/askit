@@ -9,7 +9,8 @@ class User < ApplicationRecord
   attr_accessor :old_password, :remember_token
   has_secure_password validations: false # add Attributes :password, :password_confirmation
 
-
+  # ============= Relationships ==========================
+  
   # ============= Validates ==========================
   validates :email, presence: true, uniqueness: true, 'valid_email_2/email': true
 

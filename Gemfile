@@ -23,6 +23,7 @@ gem 'jbuilder', '~> 2.7'
 gem 'bcrypt', '~> 3.1.7'
 gem "valid_email2", '~> 4.0.3'
 
+gem 'pagy', '~> 5.10' # omit patch digit
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
@@ -41,6 +42,8 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+
+  gem 'faker', '~> 2.19.0'
   # gem 'rubocop', '~> 1.25', require: false
   # gem 'rubocop-rails', '~> 2.13', require: false
   # gem 'rubocop-performance', '~> 1.13', require: false

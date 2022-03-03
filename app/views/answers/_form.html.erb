@@ -1,0 +1,9 @@
+<%= render 'shared/errors', object: @answer %>
+
+<%= form_for [@question, @answer] do |f| %>
+  <div class="mb-3">
+    <%= f.label :body, class: 'visually-hidden' %>
+    <%= f.text_area :body, class: 'form-control' %>
+  </div>
+  <%= f.submit (@answer.new_record? ? "Submit answer!" : "Update"), class: 'btn btn-outline-primary' %>
+<% end %>
