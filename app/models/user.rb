@@ -1,3 +1,9 @@
+# Fields description start
+# email: string
+# name: string
+# password_digest: string
+# remember_token_digest: string
+# Fields description end
 class User < ApplicationRecord
   # ============= Attributes ==========================
   attr_accessor :old_password, :remember_token
@@ -30,7 +36,7 @@ class User < ApplicationRecord
 
   def remember_token_authenticated?(remember_token)
     return false unless remember_token_digest.present?
-    
+
     BCrypt::Password.new(remember_token_digest).is_password?(remember_token)
   end
 
