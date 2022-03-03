@@ -4,7 +4,7 @@
 <h2 class="text-center">Log In</h2>
 
 <div class="row">
-  <div class="col col-lg-6 col-md-12 col-sm-auto m-auto">
+  <div class="col col-lg-6 col-md-12 col-sm-12 m-auto">
     <%= form_with url: session_path do |f| %>
       <div class="mb-3">
         <%= f.label :email, class: 'form-label' %>
@@ -14,6 +14,11 @@
       <div class="mb-3">
         <%= f.label :password, class: 'form-label' %>
         <%= f.password_field :password, class: 'form-control' %>
+      </div>
+
+      <div class="form-check">
+        <%= f.check_box :remember_me, class: 'form-check-input', value: '1' %>
+        <%= f.label :remember_me, class: 'form-check-label' %>
       </div>
 
       <%= f.submit 'Log In', class: 'btn btn-primary mt-2' %>
