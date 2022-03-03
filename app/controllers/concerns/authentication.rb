@@ -45,7 +45,7 @@ module Authentication
 
       return unless user&.remember_token_authenticated?(token)
 
-      sing_in user
+      sign_in user
       user
     end
 
