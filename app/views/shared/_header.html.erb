@@ -1,0 +1,39 @@
+<%= provide :header do %>
+  <header class="header sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+        <%= link_to 'AskIt', root_path, class: 'navbar-brand' %>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <%# if user_signed_in? %>
+              <li class="nav-item">
+                <%= nav_link 'Home', root_path, class: 'nav-link', current_page: current_page %>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Questions</a>
+              </li>
+              <li class="nav-item dropdown">
+                <%#= nav_link current_user.name_or_email, '#', class: 'nav-link dropdown-toggle' , data: {'bs-toggle': 'dropdown'}, current_page: current_page %>
+                <ul class="dropdown-menu dropdown-menu-left border-0 border-dark" aria-labelledby="navbarDropdown">
+                  <%#= nav_link 'Edit profile', edit_user_path(current_user), class: 'dropdown-item', current_page: current_page %>
+                  <li><hr class="dropdown-divider"></li>
+                  <%#= link_to 'Log Out', session_path, data: {method: :delete}, class: 'dropdown-item' %>
+                </ul>
+              </li>
+            <%# else %>
+              <li class="nav-item">
+                <%#= nav_link 'Sign Up', new_user_path, class: 'nav-link', current_page: current_page %>
+              </li>
+              <li class="nav-item">
+                <%#= nav_link 'Log In', new_session_path, class: 'nav-link', current_page: current_page %>
+              </li>
+            <%# end %>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+<% end %>
