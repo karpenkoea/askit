@@ -1,0 +1,41 @@
+<% provide :page_title, 'Admin Users' %>
+<% currently_at 'Admin Users' %>
+
+<h2 class="text-center">Admin Users</h2>
+
+<!-- Download users XLSX start -->
+<%= link_to 'Download zipped XLSX', admin_users_path(format: :zip),
+        class: 'btn btn-secondary mb-3' %>
+<!-- Download users XLSX end -->
+
+<!-- Users start -->
+<%= pagination @pagy %>
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Created at</th>
+      <th scope="col">Updated at</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= render @users %>
+  </tbody>
+</table>
+<%= pagination @pagy %>
+<!-- Users end -->
+
+<!-- Upload users from XLSX start -->
+<h2 class="text-center">Upload users from XLSX</h2>
+<%= form_with url: admin_users_path do |f| %>
+  <div class="row mb-3">
+    <div class="col-lg-6 col-md-12 col-sm-12">
+      <%= f.label :archive, 'Select archive', class: 'form-label' %>
+      <%= f.file_field :archive, class: 'form-control' %>
+    </div>
+  </div>
+  <%= f.submit 'Upload', class: 'btn btn-primary' %>
+<% end %>
+<!-- Upload users from XLSX end -->
