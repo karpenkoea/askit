@@ -21,15 +21,18 @@ gem 'jbuilder', '~> 2.7'
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
 gem 'bcrypt', '~> 3.1.7'
+# Validates for email (User)
 gem "valid_email2", '~> 4.0.3'
-
+# Pagination
 gem 'pagy', '~> 5.10' # omit patch digit
-
+# Open and read files .zip
 gem 'rubyzip', '~> 2.3.2'
+# Open and read files .xlsx
 gem 'caxlsx', '~> 3.1'
 gem 'caxlsx_rails', '~> 0.6'
 # Read xlsx files
 gem 'rubyXL', '~> 3.4'
+
 gem 'activerecord-import', '~> 1.2'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
