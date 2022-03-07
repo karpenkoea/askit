@@ -1,7 +1,7 @@
 <div class="row">
   <div class="col-lg-8 col-md-12 col-sm-12 m-auto">
     <%= render 'shared/errors', object: @question %>
-    
+
     <%= form_for @question do |f| %>
       <div class="mb-3">
         <%= f.label :title, class: 'form-label' %>
@@ -12,8 +12,8 @@
         <%= f.text_area :body, class: 'form-control' %>
       </div>
 
-      <%= link_to 'Back', questions_path, class: 'btn btn-secondary' %>
-      <%= f.submit (@question.new_record? ? 'Create' : 'Update'), class: 'btn btn-primary' %>
+      <%= link_to t('back'), questions_path, class: 'btn btn-secondary' %>
+      <%= f.submit class: 'btn btn-primary' %>
     <% end %>
   </div>
 </div>

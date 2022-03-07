@@ -1,0 +1,50 @@
+ru:
+  activerecord:
+    models:
+      question: Вопрос
+      answer: Ответ
+    attributes:
+      question:
+        title: Заголовок
+        body: Текст
+      answer:
+        body: Ответ
+  title:
+    home: Главная
+    questions: Вопросы
+  header:
+    home: Главная
+    questions: Вопросы
+    profile:
+      edit: Редактировать профиль
+      sign_out: Выйти
+  pages:
+    index:
+      title: Добро пожаловать в AskIt!
+  questions:
+    new: Новый вопрос
+    create:
+      success: Вопрос создан!
+    destroy:
+      success: Вопрос удален!
+    update:
+      success: Вопрос изменен!
+  answers:
+    create:
+      success: Ответ создан!
+    destroy:
+      success: Ответ удален!
+    update:
+      success: Ответ изменен!
+  helpers:
+    submit:
+      question:
+        create: Создать
+        update: Обновить
+      answer:
+        create: Ответить
+        update: Обновить
+  back: Назад
+  show: Показать
+  edit: Изменить
+  destroy: Удалить

@@ -13,6 +13,6 @@ class Answer < ApplicationRecord
 
   # ============= Instance Methods ==========================
   def formatted_created_at
-    created_at.strftime('%Y-%m-%d, %I:%M')
+    I18n.l created_at, format: :long
   end
 end

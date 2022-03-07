@@ -5,5 +5,9 @@
     <%= f.label :body, class: 'visually-hidden' %>
     <%= f.text_area :body, class: 'form-control' %>
   </div>
-  <%= f.submit (@answer.new_record? ? "Submit answer!" : "Update"), class: 'btn btn-outline-primary' %>
+
+  <% unless @answer.new_record? %>
+    <%= link_to t('back'), question_path(@question), class: 'btn btn-secondary' %>
+  <% end %>
+  <%= f.submit class: 'btn btn-outline-primary' %>
 <% end %>

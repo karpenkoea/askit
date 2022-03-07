@@ -1,5 +1,5 @@
-<% provide :page_title, 'Home' %>
-<% currently_at 'Home' %>
+<% provide :page_title, t('title.home') %>
+<% currently_at t('header.home') %>
 
-<h1>Welcome to AskIt!</h1>
+<h1><%= t('.title') %></h1>
 &copy; <%= Time.now.year %>
