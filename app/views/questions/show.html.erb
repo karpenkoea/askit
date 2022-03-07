@@ -29,10 +29,12 @@
 
   <!-- Answers start -->
   <div class="col-6">
-    <h4 class="mb-3">Answers</h4>
-    <%= pagination @pagy %>
-    <%= render partial: 'answers/answer', collection: @answers, as: :answer, locals: {question: @question} %>
-    <%= pagination @pagy %>
+    <% if @answers.present? %>
+      <h4 class="mb-3"><%= @answers.length > 1 ? "Answers" : "Answer" %></h4>
+      <%= pagination @pagy %>
+      <%= render partial: 'answers/answer', collection: @answers, as: :answer, locals: {question: @question} %>
+      <%= pagination @pagy %>
+    <% end %>
   </div>
   <!-- Answers end -->
 </div>
