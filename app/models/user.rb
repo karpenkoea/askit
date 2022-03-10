@@ -3,6 +3,7 @@
 # name: string
 # password_digest: string
 # remember_token_digest: string
+# gravatar_hash: string
 # Fields description end
 class User < ApplicationRecord
   # ============= Attributes ==========================
@@ -10,7 +11,9 @@ class User < ApplicationRecord
   has_secure_password validations: false # add Attributes :password, :password_confirmation
 
   # ============= Relationships ==========================
-  
+  has_many :questions, dependent: :destroy
+  has_many :answers, dependent: :destroy
+
   # ============= Validates ==========================
   validates :email, presence: true, uniqueness: true, 'valid_email_2/email': true
 
@@ -19,10 +22,17 @@ class User < ApplicationRecord
   validates :password, confirmation: true, allow_blank: true, length: {minimum: 8, maximum: 70}
   validate :password_complexity
 
+  # ============= Callbacks ==========================
+  before_save :set_gravatar_hash, if: :email_changed?
+
   # ============= Instance Methods ==========================
   def name_or_email
     return name if name.present?
     email.split('@')[0]
+  end
+
+  def gravatar(size: 30, css_class: '')
+    ActionController::Base.helpers.image_tag("https://www.gravatar.com/avatar/#{gravatar_hash}.jpg?s=#{size}", class: "rounded #{css_class}", alt: "#{name_or_email} Avatar")
   end
 
   def remember_me
@@ -42,6 +52,13 @@ class User < ApplicationRecord
   end
 
   private
+
+  def set_gravatar_hash
+    return unless email.present?
+
+    hash = Digest::MD5.hexdigest email.strip.downcase
+    self.gravatar_hash = hash
+  end
 
   # Продуцируем хеш
   def digest(string)

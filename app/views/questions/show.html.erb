@@ -3,9 +3,12 @@
 
 <!-- Question start -->
 <h2 class="mb-4"><%= @question.title %></h2>
+<%= @question.user.gravatar(css_class: "me-2") %>
+
 <time datetime="<%= @question.formatted_created_at %>">
   <%= @question.formatted_created_at %>
 </time>
+
 <div class="lead my-3">
   <%= sanitize @question.body %>
 </div>
