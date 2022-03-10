@@ -14,4 +14,4 @@
 #   Question.create title: title, body: body, user_id: user_id
 # end
 
-User.find_each { |user| user.send(:set_gravatar_hash) ; user.save }
+# User.find_each { |user| user.send(:set_gravatar_hash) ; user.save }
