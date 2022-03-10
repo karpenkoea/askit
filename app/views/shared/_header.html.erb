@@ -13,7 +13,7 @@
                 <%= tag.div '', class: "flag #{I18n.locale}-flag" %>
                 <%= t I18n.locale %>
               <% end %>
-              <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+              <ul class="dropdown-menu pull-left dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
                 <% I18n.available_locales.each do |locale| %>
                   <li>
                     <% if I18n.locale == locale %>
@@ -37,7 +37,7 @@
                   <%= current_user.gravatar  %>
                   <%= current_user.name_or_email %>
                 <% end %>
-                <ul class="dropdown-menu dropdown-menu-left border-0 border-dark" aria-labelledby="navbarDropdown">
+                <ul class="dropdown-menu dropdown-menu-lg-end border-0 border-dark" aria-labelledby="navbarDropdown">
                   <%= nav_link t('header.profile.edit'), edit_user_path(current_user), class: 'dropdown-item', current_page: current_page %>
                   <li><hr class="dropdown-divider"></li>
                   <%= link_to t('header.profile.sign_out'), session_path, data: {method: :delete}, class: 'dropdown-item' %>
