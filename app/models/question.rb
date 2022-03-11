@@ -17,7 +17,4 @@ class Question < ApplicationRecord
   # ============= Callbacks ==========================
 
   # ============= Instance Methods ==========================
-  def formatted_created_at
-    I18n.l created_at, format: :long
-  end
 end

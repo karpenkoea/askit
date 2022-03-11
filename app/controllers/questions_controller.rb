@@ -1,9 +1,9 @@
 class QuestionsController < ApplicationController
+  include QuestionsAnswers
   before_action :set_question!, except: %i[index new create]
 
   def show
-    @answer = @question.answers.build
-    @pagy, @answers = pagy @question.answers.order created_at: :desc
+    load_questions_answers
   end
 
   def update
@@ -34,6 +34,7 @@ class QuestionsController < ApplicationController
 
   def index
     @pagy, @questions = pagy Question.order created_at: :desc
+    @questions = @questions.decorate
   end
 
   def destroy

@@ -1,4 +1,5 @@
 class AnswersController < ApplicationController
+  include QuestionsAnswers
   include ActionView::RecordIdentifier
 
   before_action :set_question!
@@ -22,8 +23,7 @@ class AnswersController < ApplicationController
       flash[:success] = t('.success')
       redirect_to question_path(@question)
     else
-      @pagy, @answers = pagy @question.answers.order created_at: :desc
-      render 'questions/show'
+      load_questions_answers(do_render: true)
     end
   end
 

@@ -25,6 +25,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem "valid_email2", '~> 4.0.3'
 # Pagination
 gem 'pagy', '~> 5.10' # omit patch digit
+gem 'draper', '~> 4.0'
 # Open and read files .zip
 gem 'rubyzip', '~> 2.3.2'
 # Open and read files .xlsx

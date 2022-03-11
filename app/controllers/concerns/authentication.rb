@@ -32,7 +32,7 @@ module Authentication
 
     def current_user
       user = session[:user_id].present? ? user_from_session : user_from_remember_token
-      @current_user ||= user unless user.nil?
+      @current_user ||= user&.decorate
     end
 
     def user_from_session

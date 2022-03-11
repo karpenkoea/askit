@@ -26,15 +26,6 @@ class User < ApplicationRecord
   before_save :set_gravatar_hash, if: :email_changed?
 
   # ============= Instance Methods ==========================
-  def name_or_email
-    return name if name.present?
-    email.split('@')[0]
-  end
-
-  def gravatar(size: 30, css_class: '')
-    ActionController::Base.helpers.image_tag("https://www.gravatar.com/avatar/#{gravatar_hash}.jpg?s=#{size}", class: "rounded #{css_class}", alt: "#{name_or_email} Avatar")
-  end
-
   def remember_me
     self.remember_token = SecureRandom.urlsafe_base64 #  абракадабра
     update_column :remember_token_digest, digest(remember_token) # помещаем в таблицу
