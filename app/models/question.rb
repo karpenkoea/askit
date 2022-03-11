@@ -4,6 +4,8 @@
 # body: text
 # Fields description end
 class Question < ApplicationRecord
+  include Commentable
+  
   # ============= Attributes ==========================
 
   # ============= Relationships ==========================

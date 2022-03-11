@@ -33,7 +33,7 @@ class QuestionsController < ApplicationController
   end
 
   def index
-    @pagy, @questions = pagy Question.order created_at: :desc
+    @pagy, @questions = pagy Question.includes(:user).order created_at: :desc
     @questions = @questions.decorate
   end
 

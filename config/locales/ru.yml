@@ -6,6 +6,8 @@ ru:
       question: Вопрос
       answer: Ответ
     attributes:
+      comment:
+        body: Комменатарий
       question:
         title: Заголовок
         body: Текст
@@ -31,6 +33,8 @@ ru:
       success: Вопрос удален!
     update:
       success: Вопрос изменен!
+    show:
+      comment: Комментарии
   answers:
     create:
       success: Ответ создан!
@@ -38,6 +42,11 @@ ru:
       success: Ответ удален!
     update:
       success: Ответ изменен!
+  comments:
+    create:
+      success: Комментарий добавлен!
+    destroy:
+      success: Комментарий удален!
   helpers:
     submit:
       question:

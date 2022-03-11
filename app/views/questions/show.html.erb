@@ -18,6 +18,10 @@
   <%= link_to t('destroy'), question_path(@question), class: 'btn btn-danger',
     data: {method: :delete, confirm: 'Are you sure?'} %>
 </div>
+
+<div class="my-3">
+  <%= render 'comments/commentable', commentable: @question, comment: @comment, html_id: 'questionComments' %>
+</div>
 <!-- Question end -->
 
 <hr class="my-3">

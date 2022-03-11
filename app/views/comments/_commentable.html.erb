@@ -1,0 +1,22 @@
+<% is_current_comment = comment&.for?(commentable) %>
+
+<%= link_to t('questions.show.comment'), "##{html_id}",
+  class: 'btn btn-primary', data: {'bs-toggle': 'collapse'} %>
+
+<%= tag.div class: "collapse #{'show' if is_current_comment}", id: html_id do %>
+  <%= form_for [commentable, (is_current_comment ? comment : commentable.comments.build)], class: 'pt-3 border-top my-2' do |f| %>
+    <div class="mt-2">
+      <% if is_current_comment %>
+        <%= render 'shared/errors', object: @comment %>
+      <% end %>
+    </div>
+
+    <div class="mb-3 mt-3 col-lg-6">
+      <%= f.label :body, class: 'form-label visually-hidden'%>
+      <%= f.text_area :body, class: 'form-control form-control-sm' %>
+    </div>
+    <%= f.submit 'Comment', class: 'btn btn-sm btn-outline-primary' %>
+  <% end %>
+
+  <%= render commentable.comments.decorate %>
+<% end %>

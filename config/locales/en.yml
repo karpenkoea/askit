@@ -6,6 +6,8 @@ en:
       question: Question
       answer: Answer
     attributes:
+      comment:
+        body: Body
       question:
         title: Title
         body: Body
@@ -29,6 +31,8 @@ en:
       success: Question deleted!
     update:
       success: Question updated!
+    show:
+      comment: Comments
   answers:
     create:
       success: Answer created!
@@ -36,6 +40,11 @@ en:
       success: Answer deleted!
     update:
       success: Answer updated!
+  comments:
+    create:
+      success: Comment created!
+    destroy:
+      success: Comment deleted!
   helpers:
     submit:
       question:
